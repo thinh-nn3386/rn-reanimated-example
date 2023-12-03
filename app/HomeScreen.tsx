@@ -8,6 +8,8 @@ import { useNavigation } from '@react-navigation/native'
 export const HomeScreen = () => {
   const navigation = useNavigation() as any
   const renderItem: ListRenderItem<string> = ({ item }) => {
+    const screen = EXAMPLE_SCREENS[item]
+    const label = screen.icon ? screen.title + " " + screen.icon : screen.title
     return (
       <TouchableOpacity
         onPress={() => navigation.navigate(item)}
@@ -18,7 +20,12 @@ export const HomeScreen = () => {
           borderBottomColor: colors.border,
           borderBottomWidth: 1
         }}>
-          <Text>{item}</Text>
+          <Text>{label}</Text>
+          {screen.heart && <Text style={{
+            position: 'absolute',
+            right: 16,
+            top: 16
+          }}>❤</Text>}
         </View>
       </TouchableOpacity>
     )
