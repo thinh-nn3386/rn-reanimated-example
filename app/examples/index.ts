@@ -1,16 +1,32 @@
 
+import { Modal } from "react-native";
 import AnimatedKeyboardExample from "./AnimatedKeyboardExample";
 import AnimatedSensorAccelerometerExample from "./AnimatedSensorAccelerometerExample";
 import ArticleProgressExample from "./ArticleProgressExample";
 import BokehExample from "./BokehExample";
 import BubblesExample from "./BubblesExample";
+import ChatHeadsExample from "./ChatHeadsExample";
+import CubesExample from "./CubesExample";
+import PagerExample from "./CustomHandler/PagerExample";
 import DispatchCommandExample from "./DispatchCommandExample";
 import EmojiWaterfallExample from "./EmojiWaterfallExample";
 import FrameCallbackExample from "./FrameCallbackExample";
+import GetViewPropExample from "./GetViewPropExample";
+import AnimatedListExample from "./LayoutAnimations/AnimatedList";
+import BasicLayoutAnimation from "./LayoutAnimations/BasicLayoutAnimation";
+import BasicNestedAnimation from "./LayoutAnimations/BasicNestedAnimation";
+import BasicNestedLayoutAnimation from "./LayoutAnimations/BasicNestedLayoutAnimation";
+import CustomLayoutAnimationScreen from "./LayoutAnimations/CustomLayout";
+import KeyframeAnimation from "./LayoutAnimations/KeyframeAnimation";
+import MountingUnmounting from "./LayoutAnimations/MountingUnmounting";
+import OlympicAnimation from "./LayoutAnimations/OlympicAnimation";
+import ReactionsCounterExample from "./LayoutAnimations/ReactionsCounterExample";
 import LettersExample from "./LettersExample";
 import LightBoxExample from "./LightBoxExample";
 import LiquidSwipe from "./LiquidSwipe/LiquidSwipe";
+import MatrixTransform from "./MatrixTransform";
 import MeasureExample from "./MeasureExample";
+import PinExample from "./PinExample";
 import ScrollToExample from "./ScrollToExample";
 import ScrollViewOffsetExample from "./ScrollViewOffsetExample";
 import SetNativePropsExample from "./SetNativePropsExample.";
@@ -19,6 +35,24 @@ import ProfilesExample from "./SharedElementTransitions/Profiles";
 import ProgressTransitionExample from "./SharedElementTransitions/ProgressTransition";
 import SwipeableListExample from "./SwipeableListExample";
 import VolumeExample from "./VolumeExample";
+import WobbleExample from "./WobbleExample";
+import NativeModals from "./LayoutAnimations/NativeModals";
+import Carousel from "./LayoutAnimations/Carousel";
+import ReducedMotionLayoutExample from "./LayoutAnimations/ReducedMotionLayoutExample";
+import NestedLayoutAnimationConfig from "./LayoutAnimations/NestedLayoutAnimationConfig";
+import CardExample from "./SharedElementTransitions/Card";
+import CustomTransitionExample from "./SharedElementTransitions/CustomTransition";
+import LayoutAnimationExample from "./SharedElementTransitions/LayoutAnimation";
+import ManyScreensExample from "./SharedElementTransitions/ManyScreens";
+import ManyTagsExample from "./SharedElementTransitions/ManyTags";
+import NestedStacksExample from "./SharedElementTransitions/NestedStacks";
+import ModalsExample from "./SharedElementTransitions/Modals";
+import FlatListExample from "./SharedElementTransitions/FlatList";
+import ImageStackExample from "./SharedElementTransitions/ImageStack";
+import RestoreStateExample from "./SharedElementTransitions/RestoreState";
+import DuplicateTagsExample from "./SharedElementTransitions/DuplicateTags";
+import ReducedMotionSharedExample from "./SharedElementTransitions/ReducedMotionSharedExample";
+import TransitionRestartExample from "./SharedElementTransitions/TransitionRestart";
 
 interface Example {
   icon?: string;
@@ -90,26 +124,6 @@ export const EXAMPLE_SCREENS: Record<string, Example> = {
     title: 'useAnimatedSensor - accelerometer',
     screen: AnimatedSensorAccelerometerExample,
   },
-  // AnimatedSensorGyroscopeExample: {
-  //   icon: '⚖️',
-  //   title: 'useAnimatedSensor - gyroscope',
-  //   screen: AnimatedSensorGyroscopeExample,
-  // },
-  // AnimatedSensorGravityExample: {
-  //   icon: '🌎',
-  //   title: 'useAnimatedSensor - gravity',
-  //   screen: AnimatedSensorGravityExample,
-  // },
-  // AnimatedSensorMagneticFieldExample: {
-  //   icon: '🧲',
-  //   title: 'useAnimatedSensor - magnetic field',
-  //   screen: AnimatedSensorMagneticFieldExample,
-  // },
-  // AnimatedSensorRotationExample: {
-  //   icon: '🔄',
-  //   title: 'useAnimatedSensor - rotation',
-  //   screen: AnimatedSensorRotationExample,
-  // },
   FrameCallbackExample: {
     icon: '🗣',
     title: 'useFrameCallback',
@@ -141,7 +155,39 @@ export const EXAMPLE_SCREENS: Record<string, Example> = {
     screen: VolumeExample,
   },
 
-  // Shared transition -> TODO: bugs when goback
+  MatrixExample: {
+    icon: '🧮',
+    title: 'useAnimatedStyle with matrix',
+    screen: MatrixTransform,
+  },
+  GetViewPropExample: {
+    icon: '🔎',
+    title: 'getViewProp',
+    screen: GetViewPropExample,
+  },
+  ChatHeadsExample: {
+    title: 'Chat heads',
+    screen: ChatHeadsExample,
+    heart: true
+  },
+  CubesExample: {
+    title: 'Cubes',
+    screen: CubesExample,
+  },
+  PinExample: {
+    title: 'PIN example',
+    screen: PinExample,
+  },
+  WobbleExample: {
+    title: 'Wobble example',
+    screen: WobbleExample,
+  },
+  // PagerExample: {
+  //   title: 'Pager example',
+  //   screen: PagerExample,
+  // },
+
+
   GalleryExample: {
     icon: '🇮🇹',
     title: 'Gallery',
@@ -157,267 +203,112 @@ export const EXAMPLE_SCREENS: Record<string, Example> = {
     title: 'Progress transition',
     screen: ProgressTransitionExample,
   },
-  // MatrixExample: {
-  //   icon: '🧮',
-  //   title: 'useAnimatedStyle with matrix',
-  //   screen: MatrixTransform,
-  // },
-  // SpringExample: {
-  //   icon: '🕰',
-  //   title: 'Pendulum example',
-  //   screen: PendulumExample,
-  // },
-  // SpringClampExample: {
-  //   icon: '🗜',
-  //   title: 'Spring with Clamp',
-  //   screen: WithClampExample,
-  // },
-  // ReducedMotionExample: {
-  //   icon: '⏸️',
-  //   title: 'Reduced Motion',
-  //   screen: ReducedMotionExample,
-  // },
-  // GetViewPropExample: {
-  //   icon: '🔎',
-  //   title: 'getViewProp',
-  //   screen: GetViewPropExample,
-  // },
-  // LogExample: {
-  //   icon: '⌨',
-  //   title: 'Log test',
-  //   screen: LogExample,
-  // },
-  // WorkletFactoryCrash: {
-  //   icon: '🏭',
-  //   title: 'Worklet factory crash',
-  //   screen: WorkletFactoryCrash,
-  // },
-  // HabitsExample: {
-  //   icon: '🧑‍💻',
-  //   title: 'Habits',
-  //   screen: HabitsExample,
-  // },
-
-  // // Old examples
-
-  // AnimatedStyleUpdateExample: {
-  //   title: 'Animated style update',
-  //   screen: AnimatedStyleUpdateExample,
-  // },
-  // SharedStyleExample: {
-  //   title: 'Shared style',
-  //   screen: SharedStyleExample,
-  // },
-  // AnimatedTabBarExample: {
-  //   title: 'Tab bar',
-  //   screen: AnimatedTabBarExample,
-  // },
-  // ChatHeadsExample: {
-  //   title: 'Chat heads',
-  //   screen: ChatHeadsExample,
-  // },
-  // CubesExample: {
-  //   title: 'Cubes',
-  //   screen: CubesExample,
-  // },
-  // DragAndSnapExample: {
-  //   title: 'Drag and snap',
-  //   screen: DragAndSnapExample,
-  // },
-  // ColorInterpolationExample: {
-  //   title: 'Color interpolation',
-  //   screen: ColorInterpolationExample,
-  // },
-  // ExtrapolationExample: {
-  //   title: 'Extrapolation example',
-  //   screen: ExtrapolationExample,
-  // },
-  // InvertedFlatListExample: {
-  //   title: 'Inverted FlatList example',
-  //   screen: InvertedFlatListExample,
-  // },
-  // OldAnimatedSensorExample: {
-  //   title: 'Old animated sensor example',
-  //   screen: OldAnimatedSensorExample,
-  // },
-  // OldMeasureExample: {
-  //   title: 'Accordion',
-  //   screen: OldMeasureExample,
-  // },
-  // PinExample: {
-  //   title: 'PIN example',
-  //   screen: PinExample,
-  // },
-  // ScrollableViewExample: {
-  //   title: 'Scrollable view example',
-  //   screen: ScrollableViewExample,
-  // },
-  // ScrollEventExample: {
-  //   title: 'Scroll event example',
-  //   screen: ScrollEventExample,
-  // },
-  // WobbleExample: {
-  //   title: 'Wobble example',
-  //   screen: WobbleExample,
-  // },
-  // PagerExample: {
-  //   title: 'Pager example',
-  //   screen: PagerExample,
-  // },
 
   // // Layout Animations
+  BasicLayoutAnimation: {
+    title: '[LA] Basic layout animation',
+    screen: BasicLayoutAnimation,
+  },
+  BasicNestedAnimation: {
+    title: '[LA] Basic nested animation',
+    screen: BasicNestedAnimation,
+  },
+  BasicNestedLayoutAnimation: {
+    title: '[LA] Basic nested layout animation',
+    screen: BasicNestedLayoutAnimation,
+  },
 
-  // DeleteAncestorOfExiting: {
-  //   title: '[LA] Deleting view with an exiting animation',
-  //   screen: DeleteAncestorOfExiting,
-  // },
-  // NestedNativeStacksWithLayout: {
-  //   title: '[LA] Nested NativeStacks with layout',
-  //   screen: NestedNativeStacksWithLayout,
-  // },
-  // BasicLayoutAnimation: {
-  //   title: '[LA] Basic layout animation',
-  //   screen: BasicLayoutAnimation,
-  // },
-  // BasicNestedAnimation: {
-  //   title: '[LA] Basic nested animation',
-  //   screen: BasicNestedAnimation,
-  // },
-  // BasicNestedLayoutAnimation: {
-  //   title: '[LA] Basic nested layout animation',
-  //   screen: BasicNestedLayoutAnimation,
-  // },
-  // NestedLayoutAnimations: {
-  //   title: '[LA] Nested layout animations',
-  //   screen: NestedTest,
-  // },
-  // CombinedLayoutAnimations: {
-  //   title: '[LA] Entering and Exiting with Layout',
-  //   screen: CombinedTest,
-  // },
-  // DefaultAnimations: {
-  //   title: '[LA] Default layout animations',
-  //   screen: DefaultAnimations,
-  // },
-  // DefaultTransitions: {
-  //   title: '[LA] Default layout transitions',
-  //   screen: WaterfallGridExample,
-  // },
-  // KeyframeAnimation: {
-  //   title: '[LA] Keyframe animation',
-  //   screen: KeyframeAnimation,
-  // },
-  // ParticipantList: {
-  //   title: '[LA] Participant List',
-  //   screen: AnimatedListExample,
-  // },
-  // OlympicAnimation: {
-  //   title: '[LA] Olympic animation',
-  //   screen: OlympicAnimation,
-  // },
-  // CustomLayoutAnimation: {
-  //   title: '[LA] Custom layout animation',
-  //   screen: CustomLayoutAnimationScreen,
-  // },
-  // ModalNewAPI: {
-  //   title: '[LA] ModalNewAPI',
-  //   screen: ModalNewAPI,
-  // },
-  // SpringLayoutAnimation: {
-  //   title: '[LA] Spring Layout Animation',
-  //   screen: SpringLayoutAnimation,
-  // },
-  // MountingUnmounting: {
-  //   title: '[LA] Mounting Unmounting',
-  //   screen: MountingUnmounting,
-  // },
-  // ReactionsCounterExample: {
-  //   title: '[LA] Reactions counter',
-  //   screen: ReactionsCounterExample,
-  // },
-  // SwipeableList: {
-  //   title: '[LA] Swipeable list',
-  //   screen: SwipeableList,
-  // },
-  // Modal: {
-  //   title: '[LA] Modal',
-  //   screen: Modal,
-  // },
-  // NativeModals: {
-  //   title: '[LA] Native modals (RN and Screens)',
-  //   screen: NativeModals,
-  // },
-  // Carousel: {
-  //   title: '[LA] Carousel',
-  //   screen: Carousel,
-  // },
-  // ReducedMotionLayoutExample: {
-  //   title: '[LA] Reduced Motion',
-  //   screen: ReducedMotionLayoutExample,
-  // },
-  // NestedLayoutAnimationConfig: {
-  //   title: '[LA] Nested LayoutAnimationConfig',
-  //   screen: NestedLayoutAnimationConfig,
-  // },
-  // FlatListSkipEnteringExiting: {
-  //   title: '[LA] FlatList skip entering & exiting',
-  //   screen: FlatListSkipEnteringExiting,
-  // },
+  KeyframeAnimation: {
+    title: '[LA] Keyframe animation',
+    screen: KeyframeAnimation,
+  },
+
+  ParticipantList: {
+    title: '[LA] Participant List',
+    screen: AnimatedListExample,
+  },
+  OlympicAnimation: {
+    title: '[LA] Olympic animation',
+    screen: OlympicAnimation,
+  },
+  CustomLayoutAnimation: {
+    title: '[LA] Custom layout animation',
+    screen: CustomLayoutAnimationScreen,
+  },
+  MountingUnmounting: {
+    title: '[LA] Mounting Unmounting',
+    screen: MountingUnmounting,
+  },
+  ReactionsCounterExample: {
+    title: '[LA] Reactions counter',
+    screen: ReactionsCounterExample,
+  },
+  Carousel: {
+    title: '[LA] Carousel',
+    screen: Carousel,
+  },
+  ReducedMotionLayoutExample: {
+    title: '[LA] Reduced Motion',
+    screen: ReducedMotionLayoutExample,
+  },
+  NestedLayoutAnimationConfig: {
+    title: '[LA] Nested LayoutAnimationConfig',
+    screen: NestedLayoutAnimationConfig,
+  },
 
   // // Shared Element Transitions
-
-  // CardExample: {
-  //   title: '[SET] Card',
-  //   screen: CardExample,
-  // },
-  // CustomTransitionExample: {
-  //   title: '[SET] Custom transition',
-  //   screen: CustomTransitionExample,
-  // },
-  // LayoutAnimationExample: {
-  //   title: '[SET] Layout Animation',
-  //   screen: LayoutAnimationExample,
-  // },
-  // ManyScreensExample: {
-  //   title: '[SET] Many screens',
-  //   screen: ManyScreensExample,
-  // },
-  // ManyTagsExample: {
-  //   title: '[SET] Many tags',
-  //   screen: ManyTagsExample,
-  // },
-  // NestedStacksExample: {
-  //   title: '[SET] Nested stacks',
-  //   screen: NestedStacksExample,
-  // },
-  // ModalsExample: {
-  //   title: '[SET] Modals',
-  //   screen: ModalsExample,
-  // },
-  // FlatListExample: {
-  //   title: '[SET] FlatList',
-  //   screen: FlatListExample,
-  // },
-  // ImageStackExample: {
-  //   title: '[SET] Image Stack',
-  //   screen: ImageStackExample,
-  // },
-  // RestoreStateExample: {
-  //   title: '[SET] Restore State',
-  //   screen: RestoreStateExample,
-  // },
-  // DuplicateTagsExample: {
-  //   title: '[SET] Duplicate Tags',
-  //   screen: DuplicateTagsExample,
-  // },
-  // ReducedMotionSharedExample: {
-  //   title: '[SET] Reduced Motion',
-  //   screen: ReducedMotionSharedExample,
-  // },
-  // TransitionRestartExample: {
-  //   title: '[SET] Transition Restart',
-  //   screen: TransitionRestartExample,
-  // },
+  CardExample: {
+    title: '[SET] Card',
+    screen: CardExample,
+  },
+  CustomTransitionExample: {
+    title: '[SET] Custom transition',
+    screen: CustomTransitionExample,
+  },
+  LayoutAnimationExample: {
+    title: '[SET] Layout Animation',
+    screen: LayoutAnimationExample,
+  },
+  ManyScreensExample: {
+    title: '[SET] Many screens',
+    screen: ManyScreensExample,
+  },
+  ManyTagsExample: {
+    title: '[SET] Many tags',
+    screen: ManyTagsExample,
+  },
+  NestedStacksExample: {
+    title: '[SET] Nested stacks',
+    screen: NestedStacksExample,
+  },
+  ModalsExample: {
+    title: '[SET] Modals',
+    screen: ModalsExample,
+  },
+  FlatListExample: {
+    title: '[SET] FlatList',
+    screen: FlatListExample,
+  },
+  ImageStackExample: {
+    title: '[SET] Image Stack',
+    screen: ImageStackExample,
+  },
+  RestoreStateExample: {
+    title: '[SET] Restore State',
+    screen: RestoreStateExample,
+  },
+  DuplicateTagsExample: {
+    title: '[SET] Duplicate Tags',
+    screen: DuplicateTagsExample,
+  },
+  ReducedMotionSharedExample: {
+    title: '[SET] Reduced Motion',
+    screen: ReducedMotionSharedExample,
+  },
+  TransitionRestartExample: {
+    title: '[SET] Transition Restart',
+    screen: TransitionRestartExample,
+  },
 
 } as const
 
